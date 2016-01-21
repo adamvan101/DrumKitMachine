@@ -17,6 +17,7 @@
                     <MenuItem Header="Stop" Click="StopRecord_Button_Click"/>
                     <MenuItem Header="Play" Click="Play_Button_Click"/>
                     <MenuItem Header="Export" Click="Export_Button_Click"/>
+                    <MenuItem Header="View Controls" Click="View_Controls_Button_Click"/>
                 </Menu>
             </ToolBar>
         </ToolBarTray>

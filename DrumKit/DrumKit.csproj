@@ -60,6 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ControlsView\ControlsWindow.xaml.cs">
+      <DependentUpon>ControlsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DrumKitController.cs" />
     <Compile Include="DrumKitMessage.cs" />
     <Compile Include="IMessage.cs" />
@@ -69,6 +72,10 @@
     <Compile Include="Recording.cs" />
     <Compile Include="WavChunk.cs" />
     <Compile Include="WavSample.cs" />
+    <Page Include="ControlsView\ControlsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,6 +122,9 @@
     <Content Include="Resources\blip.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\WiiButtons.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

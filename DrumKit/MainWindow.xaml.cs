@@ -321,6 +321,12 @@ namespace DrumKit
             _viewModel.ExportRecording(@"another.wav");
         }
 
+        private void View_Controls_Button_Click(object sender, RoutedEventArgs e)
+        {
+            ControlsView.ControlsWindow ctrlsWin = new ControlsView.ControlsWindow();
+            ctrlsWin.Show();
+        }
+
         static List<USBDeviceInfo> GetUSBDevices()
         {
               List<USBDeviceInfo> devices = new List<USBDeviceInfo>();

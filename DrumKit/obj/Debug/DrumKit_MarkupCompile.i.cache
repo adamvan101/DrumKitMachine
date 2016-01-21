@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Adam\Documents\Visual Studio 2012\Projects\DrumKit\DrumKit\App.xaml
-11151548125
+2-1438699316
 1-1065398908
-19-1865761735
+20-1536789111
 15594416
-MainWindow.xaml;
+ControlsView\ControlsWindow.xaml;MainWindow.xaml;
 
-True
+False
 

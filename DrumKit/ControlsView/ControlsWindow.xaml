@@ -1,0 +1,39 @@
+﻿<Window x:Class="DrumKit.ControlsView.ControlsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DrumKit"
+        Title="Controls" Height="535" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Image Source="..\Resources\WiiButtons.png" />
+        <Label Content="Toggle Metronome" FontSize="20" HorizontalAlignment="Left" Margin="478,432,0,0" VerticalAlignment="Top"/>
+        <Line Stroke="Black" X1="497" Y1="432" X2="497" Y2="380" />
+
+        <Label Content="Load Saved Configuration" FontSize="20" HorizontalAlignment="Left" Margin="544,390,0,0" VerticalAlignment="Top"/>
+        <Line Stroke="Black" X1="564" Y1="390" X2="564" Y2="320" />
+        
+        <Label Content="Switch Selected Sample" FontSize="20" HorizontalAlignment="Left" Margin="564,133,0,0" VerticalAlignment="Top"/>
+        <Line Stroke="Black" X1="440" Y1="160" X2="440" Y2="230" />
+        <Line Stroke="Black" X1="440" Y1="160" X2="550" Y2="160" />
+        
+        <Label Content="Switch All Samples" FontSize="20" HorizontalAlignment="Left" Margin="618,190,0,0" VerticalAlignment="Top"/>
+        <Line Stroke="Black" X1="540" Y1="210" X2="610" Y2="210" />
+        
+        <Label Content="Tempo Increase" FontSize="20" HorizontalAlignment="Left" Margin="448,31,0,0" VerticalAlignment="Top"/>
+        <Line Stroke="Black" X1="463" Y1="70" X2="463" Y2="100" />
+        
+        <Label Content="Tempo Decrease" FontSize="20" HorizontalAlignment="Left" Margin="211,31,0,0" VerticalAlignment="Top"/>
+        <Line Stroke="Black" X1="300" Y1="70" X2="300" Y2="100" />
+
+        <Label Content="Select Selected Source" FontSize="20" HorizontalAlignment="Left" Margin="102,432,0,0" VerticalAlignment="Top"/>
+        <Line Stroke="Black" X1="130" Y1="190" X2="240" Y2="190" />
+        <Line Stroke="Black" X1="130" Y1="190" X2="130" Y2="350" />
+        <Line Stroke="Black" X1="130" Y1="350" X2="240" Y2="350" />
+        <Line Stroke="Black" X1="130" Y1="270" X2="110" Y2="270" />
+
+        <Label Content="Select Pad" FontSize="20" HorizontalAlignment="Left" Margin="10,247,0,0" VerticalAlignment="Top"/>
+        <Line Stroke="Black" X1="150" Y1="270" X2="150" Y2="400" />
+        <Line Stroke="Black" X1="330" Y1="270" X2="330" Y2="400" />
+        <Line Stroke="Black" X1="330" Y1="400" X2="150" Y2="400" />
+        <Line Stroke="Black" X1="240" Y1="430" X2="240" Y2="400" />
+    </Grid>
+</Window>
