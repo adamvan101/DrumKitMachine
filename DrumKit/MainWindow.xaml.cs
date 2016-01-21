@@ -24,7 +24,7 @@ namespace DrumKit
     public partial class MainWindow : Window
     {
         DrumViewModel _viewModel;
-        private string WAV_PATH = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "99DrumSamples");
+        private string WAV_PATH = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "DrumSamples");
 
         private List<WavSample> _wavs = new List<WavSample>();
         private DrumKitController _controller1;
