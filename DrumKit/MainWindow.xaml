@@ -1,0 +1,49 @@
+﻿<Window x:Class="DrumKit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DrumKit"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Drum Kit" Height="800" Width="725">
+    <Window.DataContext>
+        <local:DrumViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <ToolBarTray IsLocked="True" Background="White" HorizontalAlignment="Stretch">
+            <ToolBar Loaded="ToolBar_Loaded">
+                <Menu ToolBar.OverflowMode="Never">
+                    <MenuItem Header="Save" Click="Save_Button_Click"/>
+                    <MenuItem Header="Load" Click="Load_Button_Click"/>
+                    <MenuItem Header="Record" Click="Record_Button_Click"/>
+                    <MenuItem Header="Stop" Click="StopRecord_Button_Click"/>
+                    <MenuItem Header="Play" Click="Play_Button_Click"/>
+                    <MenuItem Header="Export" Click="Export_Button_Click"/>
+                </Menu>
+            </ToolBar>
+        </ToolBarTray>
+        <StackPanel Margin="30">
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="15" Content="Metronome Beats Per Minute: "/>
+                <TextBox FontSize="15" TextAlignment="Center" Text="{Binding Mode=TwoWay, Path=Bpm}" IsReadOnly="True" />
+            </StackPanel>
+            <ItemsControl ItemsSource="{Binding Mode=TwoWay, Path=Instruments}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label FontSize="25" Content="{Binding Mode=TwoWay, Path=Name}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox Margin="5" Width="200" Foreground="{Binding Mode=OneWay, Path=BrushA}" ItemsSource="{Binding Mode=TwoWay, Path=SoundList}" SelectedItem="{Binding Mode=TwoWay, Path=SoundA}" DisplayMemberPath="Name"/>
+                                <ComboBox Margin="5" Width="200" Foreground="{Binding Mode=OneWay, Path=BrushB}" ItemsSource="{Binding Mode=TwoWay, Path=SoundList}" SelectedItem="{Binding Mode=TwoWay, Path=SoundB}" DisplayMemberPath="Name"/>
+                                <Slider Width="200" Maximum="200" Minimum="0" Value="{Binding Mode=TwoWay, Path=Volume}"></Slider>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+</Window>
