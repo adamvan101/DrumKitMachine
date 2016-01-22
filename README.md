@@ -22,3 +22,4 @@ Todo:
 	* We want total configuration over this being a second bass or a hi-hat
 		* Should be able to switch between the two at runtime
 	* Hi-hat should have two samples: one if pedal down, one if pedal not down (also sample for when pedal goes down)
+* Error handling for controllers coming in and out (or not in at all)
