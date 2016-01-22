@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:DrumKit"
         Title="Controls" Height="535" Width="800" ResizeMode="NoResize">
+    <Window.Resources>
+
+    </Window.Resources>
     <Grid>
         <Image Source="..\Resources\WiiButtons.png" />
         <Label Content="Toggle Metronome" FontSize="20" HorizontalAlignment="Left" Margin="478,432,0,0" VerticalAlignment="Top"/>
@@ -35,5 +38,6 @@
         <Line Stroke="Black" X1="330" Y1="270" X2="330" Y2="400" />
         <Line Stroke="Black" X1="330" Y1="400" X2="150" Y2="400" />
         <Line Stroke="Black" X1="240" Y1="430" X2="240" Y2="400" />
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </Window>

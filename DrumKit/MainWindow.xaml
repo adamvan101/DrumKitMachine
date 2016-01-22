@@ -7,6 +7,9 @@
     <Window.DataContext>
         <local:DrumViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <local:VolumeConverter x:Key="volConverter"/>
+    </Window.Resources>
     <Grid>
         <ToolBarTray IsLocked="True" Background="White" HorizontalAlignment="Stretch">
             <ToolBar Loaded="ToolBar_Loaded">
@@ -35,11 +38,15 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <Label FontSize="25" Content="{Binding Mode=TwoWay, Path=Name}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="25" Content="{Binding Mode=TwoWay, Path=Name}"/>
+                                <Slider VerticalAlignment="Center" Maximum="200" Minimum="0" Value="{Binding Mode=TwoWay, Path=Volume, Converter={StaticResource volConverter}}" Template="{DynamicResource VolumeSlider}"/>
+                                <Label VerticalAlignment="Center" FontSize="15" Content="Volume: "/>
+                                <Label VerticalAlignment="Center" FontSize="15" Content="{Binding Mode=TwoWay, Path=Volume, Converter={StaticResource volConverter}}"/>
+                            </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <ComboBox Margin="5" Width="200" Foreground="{Binding Mode=OneWay, Path=BrushA}" ItemsSource="{Binding Mode=TwoWay, Path=SoundList}" SelectedItem="{Binding Mode=TwoWay, Path=SoundA}" DisplayMemberPath="Name"/>
                                 <ComboBox Margin="5" Width="200" Foreground="{Binding Mode=OneWay, Path=BrushB}" ItemsSource="{Binding Mode=TwoWay, Path=SoundList}" SelectedItem="{Binding Mode=TwoWay, Path=SoundB}" DisplayMemberPath="Name"/>
-                                <Slider Width="200" Maximum="200" Minimum="0" Value="{Binding Mode=TwoWay, Path=Volume}"></Slider>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>

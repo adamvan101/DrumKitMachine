@@ -76,11 +76,11 @@ namespace DrumKit
             {
                 if (PlaySoundA)
                 {
-                    return SoundA.GetPlayer().Volume * 200;
+                    return SoundA.GetPlayer().Volume;
                 }
                 else
                 {
-                    return SoundB.GetPlayer().Volume * 200;
+                    return SoundB.GetPlayer().Volume;
                 }
             }
             set
@@ -231,8 +231,8 @@ namespace DrumKit
             SoundB.Load();
             Type = type;
             Name = type.ToString();
-            SoundA.SetVolume(1);
-            SoundB.SetVolume(1);
+            SoundA.SetVolume(0.5);
+            SoundB.SetVolume(0.5);
         }
 
         public Instrument(ObservableCollection<WavSample> list, InstrumentType type, Dispatcher dispatcher, String name)

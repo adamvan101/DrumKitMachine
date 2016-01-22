@@ -63,6 +63,7 @@
     <Compile Include="ControlsView\ControlsWindow.xaml.cs">
       <DependentUpon>ControlsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="DrumKitController.cs" />
     <Compile Include="DrumKitMessage.cs" />
     <Compile Include="IMessage.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="MessageFactory.cs" />
     <Compile Include="Metronome.cs" />
     <Compile Include="Recording.cs" />
+    <Compile Include="Converters\VolumeConverter.cs" />
     <Compile Include="WavChunk.cs" />
     <Compile Include="WavSample.cs" />
     <Page Include="ControlsView\ControlsWindow.xaml">
