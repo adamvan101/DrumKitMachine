@@ -10,3 +10,15 @@ Features:
 * Remappable sounds for each pad
 * Metronome with configurable tempo
 * Audio Recording and Playback/Exporting
+
+
+Todo:
+* Remappable controls
+* New controls for drum 2 (currently they clone drum 1)
+* Configurable sample and export paths
+* Configurable state save/load location
+* Upgrade UI
+* Second Pedal (hi-hat)
+	* We want total configuration over this being a second bass or a hi-hat
+		* Should be able to switch between the two at runtime
+	* Hi-hat should have two samples: one if pedal down, one if pedal not down (also sample for when pedal goes down)
