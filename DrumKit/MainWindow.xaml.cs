@@ -45,7 +45,7 @@ namespace DrumKit
                     _viewModel.Instruments[(_selectedIndex + _viewModel.Instruments.Count) % _viewModel.Instruments.Count].IsSelected = false;
                 }
                 catch (Exception e) { /* suppress */ }
-                _selectedIndex = (value + _viewModel.Instruments.Count);
+                _selectedIndex = (value + _viewModel.Instruments.Count) % _viewModel.Instruments.Count;
                 _viewModel.Instruments[(_selectedIndex + _viewModel.Instruments.Count) % _viewModel.Instruments.Count].IsSelected = true;
             }
         }
@@ -139,22 +139,36 @@ namespace DrumKit
             if (m.RightPressed && _controller1.rightUp)
             {
                 _controller1.rightUp = false;
-                SelectedIndex++;
+                if (_viewModel.Instruments[SelectedIndex].PlaySoundA)
+                {
+                    _viewModel.Instruments[SelectedIndex].SoundA = _viewModel.Instruments[SelectedIndex].SoundList[(_viewModel.Instruments[SelectedIndex].SoundList.IndexOf(_viewModel.Instruments[SelectedIndex].SoundA) + 1) % _viewModel.Instruments[SelectedIndex].SoundList.Count];
+                }
+                else
+                {
+                    _viewModel.Instruments[SelectedIndex].SoundB = _viewModel.Instruments[SelectedIndex].SoundList[(_viewModel.Instruments[SelectedIndex].SoundList.IndexOf(_viewModel.Instruments[SelectedIndex].SoundB) + 1) % _viewModel.Instruments[SelectedIndex].SoundList.Count];
+                }
             }
             if (m.LeftPressed && _controller1.leftUp)
             {
                 _controller1.leftUp = false;
-                SelectedIndex--;
+                if (_viewModel.Instruments[SelectedIndex].PlaySoundA)
+                {
+                    _viewModel.Instruments[SelectedIndex].SoundA = _viewModel.Instruments[SelectedIndex].SoundList[(_viewModel.Instruments[SelectedIndex].SoundList.IndexOf(_viewModel.Instruments[SelectedIndex].SoundA) - 1 + _viewModel.Instruments[SelectedIndex].SoundList.Count) % _viewModel.Instruments[SelectedIndex].SoundList.Count];
+                }
+                else
+                {
+                    _viewModel.Instruments[SelectedIndex].SoundB = _viewModel.Instruments[SelectedIndex].SoundList[(_viewModel.Instruments[SelectedIndex].SoundList.IndexOf(_viewModel.Instruments[SelectedIndex].SoundB) - 1 + _viewModel.Instruments[SelectedIndex].SoundList.Count) % _viewModel.Instruments[SelectedIndex].SoundList.Count];
+                }
             }
             if (m.UpPressed && _controller1.upUp)
             {
                 _controller1.upUp = false;
-                _viewModel.Instruments[SelectedIndex].SoundA = _viewModel.Instruments[SelectedIndex].SoundList[(_viewModel.Instruments[SelectedIndex].SoundList.IndexOf(_viewModel.Instruments[SelectedIndex].SoundA) - 1 + _viewModel.Instruments[SelectedIndex].SoundList.Count) % _viewModel.Instruments[SelectedIndex].SoundList.Count];
+                SelectedIndex--;
             }
             if (m.DownPressed && _controller1.downUp)
             {
                 _controller1.downUp = false;
-                _viewModel.Instruments[SelectedIndex].SoundA = _viewModel.Instruments[SelectedIndex].SoundList[(_viewModel.Instruments[SelectedIndex].SoundList.IndexOf(_viewModel.Instruments[SelectedIndex].SoundA) + 1) % _viewModel.Instruments[SelectedIndex].SoundList.Count];
+                SelectedIndex++;
             }
             if (m.ButtonPedalPressed && _controller1.pedalUp)
             {
