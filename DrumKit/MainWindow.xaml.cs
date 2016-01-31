@@ -290,16 +290,6 @@ namespace DrumKit
             }
         }
 
-        private void Save_Button_Click(object sender, RoutedEventArgs e)
-        {
-            _viewModel.Save();
-        }
-
-        private void Load_Button_Click(object sender, RoutedEventArgs e)
-        {
-            _viewModel.Load();
-        }
-
         private void ToolBar_Loaded(object sender, RoutedEventArgs e)
         {
             ToolBar tb = sender as ToolBar;
@@ -361,6 +351,26 @@ namespace DrumKit
 
               collection.Dispose();
               return devices;
+        }
+
+        private void Save_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Save();
+        }
+
+        private void Load_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Load();
+        }
+
+        private void Load_As_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Load(true);
+        }
+
+        private void Save_As_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Save(true);
         }
       }
 

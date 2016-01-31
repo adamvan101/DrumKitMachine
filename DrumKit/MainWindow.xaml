@@ -15,7 +15,9 @@
             <ToolBar Loaded="ToolBar_Loaded">
                 <Menu ToolBar.OverflowMode="Never">
                     <MenuItem Header="Save" Click="Save_Button_Click"/>
+                    <MenuItem Header="Save As..." Click="Save_As_Button_Click"/>
                     <MenuItem Header="Load" Click="Load_Button_Click"/>
+                    <MenuItem Header="Load As..." Click="Load_As_Button_Click"/>
                     <MenuItem Header="Record" Click="Record_Button_Click"/>
                     <MenuItem Header="Stop" Click="StopRecord_Button_Click"/>
                     <MenuItem Header="Play" Click="Play_Button_Click"/>

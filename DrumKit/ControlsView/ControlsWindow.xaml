@@ -38,6 +38,5 @@
         <Line Stroke="Black" X1="330" Y1="270" X2="330" Y2="400" />
         <Line Stroke="Black" X1="330" Y1="400" X2="150" Y2="400" />
         <Line Stroke="Black" X1="240" Y1="430" X2="240" Y2="400" />
-        <RadioButton Content="RadioButton" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </Window>

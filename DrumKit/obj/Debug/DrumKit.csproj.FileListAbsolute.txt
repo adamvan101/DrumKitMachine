@@ -21,3 +21,4 @@ C:\Users\Adam\documents\visual studio 2012\Projects\DrumKit\DrumKit\obj\Debug\Dr
 C:\Users\Adam\documents\visual studio 2012\Projects\DrumKit\DrumKit\obj\Debug\DrumKit.csproj.GenerateResource.Cache
 C:\Users\Adam\documents\visual studio 2012\Projects\DrumKit\DrumKit\obj\Debug\DrumKit.exe
 C:\Users\Adam\documents\visual studio 2012\Projects\DrumKit\DrumKit\obj\Debug\DrumKit.pdb
+C:\Users\Adam\documents\visual studio 2012\Projects\DrumKit\DrumKit\obj\Debug\DrumKit.csprojResolveAssemblyReference.cache

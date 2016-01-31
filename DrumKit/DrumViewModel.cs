@@ -1,4 +1,5 @@
-﻿using NAudio.Wave;
+﻿using Microsoft.Win32;
+using NAudio.Wave;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -109,9 +110,24 @@ namespace DrumKit
             }));
         }
 
-        public void Save()
+        public void Save(bool custom = false)
         {
-            using (StreamWriter s = new StreamWriter(@"save.sv", false))
+            string path = @"save.sv";
+            if (custom)
+            {
+                SaveFileDialog fd = new SaveFileDialog();
+                Nullable<bool> res = fd.ShowDialog();
+
+                if (res == true)
+                {
+                    path = fd.FileName;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            using (StreamWriter s = new StreamWriter(path, false))
             {
                 foreach (Instrument i in Instruments)
                 {
@@ -121,9 +137,24 @@ namespace DrumKit
             }
         }
 
-        public void Load()
+        public void Load(bool custom = false)
         {
-            using (StreamReader reader = new StreamReader(@"save.sv"))
+            string path = @"save.sv";
+            if (custom)
+            {
+                OpenFileDialog fd = new OpenFileDialog();
+                Nullable<bool> res = fd.ShowDialog();
+
+                if (res == true) 
+                {
+                    path = fd.FileName;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            using (StreamReader reader = new StreamReader(path))
             {
                 foreach (Instrument i in Instruments)
                 {
